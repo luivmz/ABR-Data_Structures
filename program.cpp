@@ -152,7 +152,7 @@ void posorden(nodo *arbol) {
 
 void buscarProducto(nodo *arbol) {
     if (arbol == NULL) {
-        cout << "Arbol vacío. No hay productos para buscar." << endl;
+        cout << "Arbol vacio. No hay productos para buscar." << endl;
         return;
     }
 
@@ -189,7 +189,7 @@ void encontrarMinimo(nodo*& arbol, nodo*& minimo) {
 
 void eliminarNodo(nodo*& arbol, int codigo) {
     if (!arbol) {
-        cout << "No se encontró el producto con el código " << codigo << ".\n";
+        cout << "No se encontro el producto con el codigo " << codigo << ".\n";
         return;
     }
 
@@ -199,11 +199,11 @@ void eliminarNodo(nodo*& arbol, int codigo) {
         eliminarNodo(arbol->der, codigo);
     } else {
         // Nodo encontrado
-        nodo* temp = nullptr;
+        nodo* temp = NULL;
         if (!arbol->izq && !arbol->der) {
             // Caso 1: Nodo hoja
             delete arbol;
-            arbol = nullptr;
+            arbol = NULL;
         } else if (!arbol->izq) {
             // Caso 2: Nodo con un hijo derecho
             temp = arbol;
@@ -216,8 +216,8 @@ void eliminarNodo(nodo*& arbol, int codigo) {
             delete temp;
         } else {
             // Caso 3: Nodo con dos hijos
-            nodo* minimo = nullptr;
-            encontrarMinimo(arbol->der, minimo); // Encontrar mínimo del subárbol derecho
+            nodo* minimo = NULL;
+            encontrarMinimo(arbol->der, minimo); // Encontrar minimo del subárbol derecho
             arbol->codigo = minimo->codigo;
             arbol->nombreProducto = minimo->nombreProducto;
             arbol->cantidad = minimo->cantidad;
@@ -229,7 +229,7 @@ void eliminarNodo(nodo*& arbol, int codigo) {
 
 void eliminarProducto(nodo *&arbol) {
     if (arbol == NULL) {
-        cout << "Arbol vacío. No hay productos para eliminar." << endl;
+        cout << "Arbol vacio. No hay productos para eliminar." << endl;
         return;
     }
 
@@ -243,7 +243,7 @@ void eliminarProducto(nodo *&arbol) {
 
 void actualizarProducto(nodo *arbol) {
     if (arbol == NULL) {
-        cout << "Arbol vacío. No hay productos para actualizar." << endl;
+        cout << "Arbol vacio. No hay productos para actualizar." << endl;
         return;
     }
 
@@ -295,10 +295,10 @@ void cargarProductosPrueba(nodo *&arbol) {
                        550, 650, 750, 850, 950, 150, 225, 325, 450, 675};
     
     string nombres[20] = {
-        "Laptop HP", "Teclado Mecanico", "Mouse Gamer", "Monitor 24''", "Audífonos Bluetooth",
-        "Silla Gamer", "Escritorio Oficina", "Impresora Multifunción", "Router WiFi", "Cámara Web",
+        "Laptop HP", "Teclado Mecanico", "Mouse Gamer", "Monitor 24''", "Audifonos Bluetooth",
+        "Silla Gamer", "Escritorio Oficina", "Impresora Multifuncion", "Router WiFi", "Cámara Web",
         "Smartphone Samsung", "Tablet Lenovo", "Cargador Universal", "Disco Duro Externo", "Memoria USB",
-        "Bicicleta Montania", "Casco Deportivo", "Batería Recargable", "Linterna LED", "Reloj Inteligente"
+        "Bicicleta Montania", "Casco Deportivo", "Bateria Recargable", "Linterna LED", "Reloj Inteligente"
     };
 
     int cantidades[20] = {5, 10, 15, 8, 20, 

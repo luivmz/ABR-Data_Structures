@@ -121,7 +121,7 @@ void imprime(nodo *arbol, int c) {
         return;
     imprime(arbol->der, c + 1);
     for (int i = 0; i < c; i++)
-        cout << " ";
+        cout << "-----";
     cout << arbol->codigo << endl;
     imprime(arbol->izq, c + 1);
 }
